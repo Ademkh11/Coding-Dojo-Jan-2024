@@ -1,0 +1,27 @@
+
+.custom-button{
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    color:rgb(13, 247, 169);
+    border-color: rgb(13, 247, 169);
+    
+}
+.circle-button{
+    width:50px;
+    height: 50px;
+    color: white;
+    background-color:   rgb(41, 201, 140);
+    border-color:  rgb(41, 201, 140);
+    border-radius: 50%;
+padding: 1px 1px;
+}
+button{
+    color: white;
+    background-color: rgb(30, 102, 197);
+    border-color: black;
+    text-align: center;
+    padding: 15px 30px;
+    
+}

@@ -1,0 +1,54 @@
+.container {
+    width: 720px;
+    height: 500px;
+    background-color:whitesmoke
+    
+}
+.col {
+    width: 700px;
+    height:100px;
+    padding: 10px;
+    background-color:#17A2B8;
+    display: inline-block;
+}
+div{
+    box-shadow: gray;
+    border:gray solid 2px;
+}
+.img{
+  height:100px;
+  width:100px;
+  position: relative;  
+  top: 55px;
+}
+h1{
+    position: relative;
+    top:40px;
+}
+.map{
+    height:20px;
+    width:15px;
+    position: relative;
+    top:30px
+}
+h3{
+    position: relative;
+    left:25px;
+    bottom:15px;
+
+
+}
+.gear{
+    width:25px;
+    height:25px;
+    
+}
+.prg{
+    width:100px;
+    height:100px;
+    color:#17A2B8;
+    position:relative;
+    left:35px;
+bottom:40px;
+    
+}
