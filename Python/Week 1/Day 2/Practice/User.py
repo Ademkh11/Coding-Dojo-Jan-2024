@@ -1,37 +1,34 @@
-def update_values(x, index1, index2, new_value):
-    x[index1][index2] = new_value
-    return x
-x = [ [5,2,3], [10,8,9] ]
-x = update_values(x, 1, 0, 15)
-print(x)  # Output: [ [5,2,3], [15,8,9] ]
+class user :
+    def __init__(self, first_name, last_name, email , age,is_rewards_member = False , gold_card_points = 0) :
+        self.first_name=first_name
+        self.last_name=last_name
+        self.email=email
+        self.age=age
+        self.is_rewards_member=is_rewards_member
+        self.gold_card_points=gold_card_points
+    def display_info(self):
+        print("user details :")
+        print(f"First name : {self.first_name}")
+        print(f"Last name : {self.last_name}")
+        print(f"Email : {self.email}")
+        print(f"Age : {self.age}")
+        print(f"rewards member : {'Yes' if self.is_rewards_member else 'No'}")
+        print(f"Gold Card Points :{self.gold_card_points}")
+    def enroll(self):
+        self.is_rewards_member = True
+        self.gold_card_points = 200
+    print("Enrolled successfully as a rewards member with 200 gold card points.")
+    def spend_points(self, amount) :
+        if self.gold_card_points >= amount:
+            self.gold_card_points -= amount
+            print(f"{amount} points spent. Remaining points: {self.gold_card_points}")
+        else:
+            print("Insufficient points.")
+user1 = user("John", "Doe", "john.doe@example.com", 30)
+user1.display_info()
 
-def iterateDictionary(some_list):
-    for dictionary in some_list:
-        for key, value in dictionary.items():
-            print(f"{key} - {value}")
-students = [
-    {'first_name':  'Michael', 'last_name' : 'Jordan'},
-    {'first_name' : 'John', 'last_name' : 'Rosales'}
-]
-iterateDictionary(students)
+user1.enroll()
+user1.display_info()
 
-def iterateDictionary2(key_name, some_list):
-    for dictionary in some_list:
-        print(dictionary[key_name])
-students = [
-    {'first_name':  'Michael', 'last_name' : 'Jordan'},
-    {'first_name' : 'John', 'last_name' : 'Rosales'}
-]
-iterateDictionary2('first_name', students)
-iterateDictionary2('last_name', students)
-
-def printInfo(some_dict):
-    for key, value in some_dict.items():
-        print(f"{len(value)} {key.upper()}")
-        for item in value:
-            print(item)
-dojo = {
-'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
-'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
-}
-printInfo(dojo)
+user1.spend_points(50)
+user1.display_info()
