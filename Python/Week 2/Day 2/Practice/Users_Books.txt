@@ -1,0 +1,16 @@
+SELECT * FROM books_schema.users;
+SELECT * FROM books_schema.books;
+INSERT INTO books_schema.users(first_name , last_name)
+VALUES ('Jane', 'Amsden'),
+('Emily' , 	'Dixon'),
+('Theodore','Destoevsky'),
+('William' ,'Shapiro'),
+('Lao' ,'Xiu');
+INSERT INTO books_schema.books(title)
+VALUES ('C Sharp'), ('Java'), ('Pyhton') ,('PHP') ,('Ruby')
+UPDATE books_schema.books
+SET title = 'C#'
+WHERE  id = 1;
+UPDATE books_schema.users
+SET first_name = 'Bill'
+WHERE  id = 4;
