@@ -1,0 +1,55 @@
+SELECT * FROM dojos_and_ninjas_schema.dojos;
+SELECT * FROM dojos_and_ninjas_schema.ninjas;
+
+INSERT INTO dojos_and_ninjas_schema.dojos ( name )
+VALUES ('Joe'),('Jane'),('Adrian');
+SET SQL_SAFE_UPDATES = 0;
+
+DELETE FROM dojos_and_ninjas_schema.dojos;
+INSERT INTO dojos_and_ninjas_schema.dojos ( name )
+VALUES ('Ronaldo'),('Messi'),('Benzema');
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES 
+	('David','Beckham', '48', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1)),
+	('Andres','iniesta', '39', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1)),
+	('Luka','Modric', '38', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1));
+    INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES 
+	('ahmed','sakly', '24', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1)),
+	('Ala','Debabi', '34', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1)),
+	('Amine','Kraim', '31', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1));
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES 
+	('ahmed','sakly', '24', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1)),
+	('Ala','Debabi', '34', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1)),
+	('Amine','Kraim', '31', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1));
+
+    INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES 
+	('Olivier','Giroud', '37', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1)),
+	('Didier','Drogba', '45', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1)),
+	('Erling','Haaland', '23', (SELECT id FROM dojos ORDER BY id ASC LIMIT 1,1));
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) 
+VALUES 
+	('Marco','Verrati', '31', (SELECT id FROM dojos ORDER BY id DESC LIMIT 1)),
+	('Marco','Asensio', '28', (SELECT id FROM dojos ORDER BY id DESC LIMIT 1)),
+	('Raphael','Varane', '30', (SELECT id FROM dojos ORDER BY id DESC LIMIT 1));
+
+SELECT * FROM ninjas 
+WHERE dojo_id = (SELECT id FROM dojos ORDER BY id ASC LIMIT 1);
+
+SELECT * FROM ninjas 
+WHERE dojo_id = ( SELECT id FROM dojos ORDER BY id DESC LIMIT 1);
+
+SELECT * FROM dojos 
+JOIN ninjas ON dojos.id = ninjas.dojo_id 
+ORDER BY ninjas.id DESC LIMIT 1;
+
+SELECT ninjas.*, dojos.name AS dojo_name FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id 
+WHERE ninjas.id = 6;
+
+SELECT ninjas.*, dojos.name FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id;
